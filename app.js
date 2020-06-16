@@ -1,15 +1,4 @@
-$('#tableBody').on("change", function () {
-    calcutePrice()
-});
 
-function calcutePrice() {
-    let quntity = parseInt($('#quntity').val());
-    let unitPrice = parseInt($('#unitPrice').val());
-    let tax = parseInt($('#unitPrice').val() * 0.09);
-    $('#tax').val(tax);
-    let price = (quntity * unitPrice) + tax;
-    $('#price').val(price);
-}
 
 //-----------------  Function Add Product  ---------------------
 $('#rowProduct').click(function (e) {
@@ -32,3 +21,28 @@ function addProduct() {
     calcutePrice()
 }
 
+
+$('#tableBody').on("change", function () {
+    calcutePrice()
+});
+
+function calcutePrice() {
+    let quntity = parseInt($('#quntity').val());
+    let unitPrice = parseInt($('#unitPrice').val());
+    let tax = parseInt($('#unitPrice').val() * 0.09);
+    $('#tax').val(tax);
+    let price = (quntity * unitPrice) + tax;
+    $('#price').val(price);
+
+    billGenerator()
+}
+
+function billGenerator() {
+    let priceProduct = 0;
+    $.each($("input[id=price]"), function (index, element) {
+        priceProduct += parseInt($(this).val());
+    });
+    console.log(typeof(priceProduct));
+    
+    $("#totalPrice").val(priceProduct);
+}
