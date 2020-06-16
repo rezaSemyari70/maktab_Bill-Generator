@@ -1,0 +1,28 @@
+
+table tr th{
+    width: 100px;
+    padding: 2px !important;
+}
+
+input{
+    width: 95px ;
+    border: 0.5px solid rgb(230, 230, 230);
+    box-shadow: 2px 4px 7px #ececec;
+    border-radius: 3px;
+    outline: none;
+}
+
+textarea{
+    height: 30px;
+    border: 0.5px solid rgb(230, 230, 230);
+    box-shadow: 2px 4px 7px #ececec;
+    border-radius: 3px;
+    outline: none;
+}
+#tableProduct{
+    max-width: 700px;
+}
+
+table td{
+    border: 1px solid white;
+}
