@@ -1,4 +1,4 @@
-$('input').on("change", function () {
+$('#tableBody').on("change", function () {
     calcutePrice()
 });
 
@@ -8,5 +8,27 @@ function calcutePrice() {
     let tax = parseInt($('#unitPrice').val() * 0.09);
     $('#tax').val(tax);
     let price = (quntity * unitPrice) + tax;
-    $('#price').val(price)
+    $('#price').val(price);
 }
+
+//-----------------  Function Add Product  ---------------------
+$('#rowProduct').click(function (e) {
+    addProduct()
+});
+
+
+function addProduct() {
+    let addProduct = `
+    <tr>
+        <td><textarea></textarea></td>
+        <td><input class="text-center" id="product" type="text"></td>
+        <td><input class="text-center" id="quntity" type="text" value=""></td>
+        <td><input class="text-center" id="unitPrice" type="text" value=""></td>
+        <td><input class="text-center" id="tax" type="text" readonly value=""></td>
+        <td><input class="text-center" id="price" name="price" readonly value="0"></td>
+    </tr>
+    `
+    $('#tableBody').append(addProduct);
+    calcutePrice()
+}
+

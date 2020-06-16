@@ -16,34 +16,39 @@
 <body>
     <div class="container p-5">
         <div class="row justify-content-center">
-            <table id="tableProduct" class="table table-condensed items-table">
-                <thead>
-                    <tr>
-                        <th class="text-center bg-dark text-light"><label for="">درباره محصول</label></th>
-                        <th class="text-center bg-dark text-light"><label for="">نام محصول</label></th>
-                        <th class="text-center bg-dark text-light"><label for="">تعداد</label></th>
-                        <th class="text-center bg-dark text-light"><label for="">قیمت واحد</label></th>
-                        <th class="text-center bg-dark text-light"><label for="">مالیات</label></th>
-                        <th class="text-center bg-dark text-light"><label for="">قیمت</label></th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr>
-                        <td><textarea></textarea></td>
-                        <td><input class="text-center" id="product" type="text"></td>
-                        <td><input class="text-center" id="quntity" type="text" value="0"></td>
-                        <td><input class="text-center" id="unitPrice" type="text" value="0"></td>
-                        <td><input class="text-center" id="tax" type="text" readonly value="0"></td>
-                        <td><input class="text-center" id="price" name="price" readonly value="0"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td><label class="text-center">جمع کل</label></td>
-                        <td><input id="totalPrice" class="bg-success text-dark border-0" readonly type="text"></td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="col">
+                <button id="rowProduct" class="btn btn-outline-primary">Add product</button>
+                <div class="row justify-content-center">
+                    <table id="tableProduct" class="table table-condensed items-table">
+                        <thead>
+                            <tr>
+                                <th class="text-center bg-dark text-light"><label for="">درباره محصول</label></th>
+                                <th class="text-center bg-dark text-light"><label for="">نام محصول</label></th>
+                                <th class="text-center bg-dark text-light"><label for="">تعداد</label></th>
+                                <th class="text-center bg-dark text-light"><label for="">قیمت واحد</label></th>
+                                <th class="text-center bg-dark text-light"><label for="">مالیات</label></th>
+                                <th class="text-center bg-dark text-light"><label for="">قیمت</label></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td><textarea></textarea></td>
+                                <td><input class="text-center" id="product" type="text"></td>
+                                <td><input class="text-center" id="quntity" type="text" value="0"></td>
+                                <td><input class="text-center" id="unitPrice" type="text" value="0"></td>
+                                <td><input class="text-center" id="tax" type="text" readonly value="0"></td>
+                                <td><input class="text-center" id="price" name="price" readonly value="0"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><label class="text-center">جمع کل</label></td>
+                                <td><input id="totalPrice" class="bg-success text-dark border-0" readonly type="text"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
