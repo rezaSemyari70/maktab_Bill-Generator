@@ -1,10 +1,8 @@
+// ------------- Create Row Table(Product) ---------------
 
-
-//-----------------  Function Add Product  ---------------------
 $('#rowProduct').click(function (e) {
     addProduct()
 });
-
 
 function addProduct() {
     let addProduct = `
@@ -18,31 +16,33 @@ function addProduct() {
     </tr>
     `
     $('#tableBody').append(addProduct);
-    calcutePrice()
 }
 
+
+// -----------  Calcute Price Of Any Product ------------
 
 $('#tableBody').on("change", function () {
-    calcutePrice()
-});
-
-function calcutePrice() {
-    let quntity = parseInt($('#quntity').val());
-    let unitPrice = parseInt($('#unitPrice').val());
-    let tax = parseInt($('#unitPrice').val() * 0.09);
-    $('#tax').val(tax);
-    let price = (quntity * unitPrice) + tax;
-    $('#price').val(price);
+    $('table tr').each(function() {
+        let quntity = parseInt($(this).find("td").eq(2).val());    
+        let unitPrice = parseInt($(this).find("td").eq(3).val());    
+        let tax = unitPrice * 0.09; 
+        let price = (quntity * unitPrice) + tax;
+        
+        $('#price').val(price);
+    });
 
     billGenerator()
-}
+});
+
+
+//------------- Calculate Total Prices ---------------
 
 function billGenerator() {
     let priceProduct = 0;
     $.each($("input[id=price]"), function (index, element) {
         priceProduct += parseInt($(this).val());
     });
-    console.log(typeof(priceProduct));
-    
+    console.log(typeof (priceProduct));
+
     $("#totalPrice").val(priceProduct);
 }
