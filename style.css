@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(228, 228, 228) !important;
+}
 
 table tr th{
     width: 100px;
@@ -7,7 +10,7 @@ table tr th{
 input{
     width: 95px ;
     border: 0.5px solid rgb(230, 230, 230);
-    box-shadow: 2px 4px 7px #ececec;
+    box-shadow: 2px 4px 7px #b1b1b1;
     border-radius: 3px;
     outline: none;
 }
@@ -15,14 +18,49 @@ input{
 textarea{
     height: 30px;
     border: 0.5px solid rgb(230, 230, 230);
-    box-shadow: 2px 4px 7px #ececec;
+    box-shadow: 2px 4px 7px #b1b1b1;
     border-radius: 3px;
     outline: none;
 }
 #tableProduct{
-    max-width: 700px;
+    max-width: 750px;
 }
 
-table td{
+table td , table th{
     border: 1px solid white;
+    border:none !important ;
+}
+
+th{
+    height: 40px;
+}
+
+table tr td:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+table tr td:nth-child(2) input{
+    width: 100%;
+}
+#totalPrice {
+    width: 200px;
+    height: 40px;
+    border-top: none;
+    text-align: center;
+}
+
+button{
+    margin-bottom: 10px !important;
+}
+
+tfoot tr td{
+    text-align: right;
+    font-weight: bold;
+    height: 60px;
+    font-size: 20px;
+}
+
+label span{
+    font-size: 16px;
 }
